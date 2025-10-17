@@ -4,220 +4,520 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O MELHOR PROFISSIONAL DO MUNDO | Antonio Carlos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #fdbb2d;
+            --light: #ffffff;
+            --dark: #1e1e2c;
+            --gray: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.15);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            --gold-gradient: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
-            color: #333;
+            background: linear-gradient(135deg, #0c0c2e 0%, #1a1a3e 50%, #2d1b69 100%);
+            color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(253, 187, 45, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(26, 42, 108, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(178, 31, 31, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
         
         .container {
-            max-width: 100%;
-            padding: 0 15px;
+            width: 100%;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
         
+        /* Header */
         header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            padding: 30px 0;
+            padding: 60px 0 40px;
             text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
         }
         
         .book-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .author {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
             opacity: 0.9;
+            color: #e0e0ff;
         }
         
         .slogan {
-            font-size: 1.1rem;
-            background-color: rgba(255,255,255,0.2);
-            padding: 10px 15px;
-            border-radius: 30px;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .book-cover-container {
+            width: 85%;
+            max-width: 380px;
+            margin: 40px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+            transition: transform 0.7s ease, box-shadow 0.7s ease;
+            position: relative;
+            z-index: 1;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .book-cover-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 15px;
+        }
+        
+        .book-cover-container:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0) scale(1.03);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
         
         .book-cover {
-            width: 80%;
-            max-width: 300px;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .book-cover img {
             width: 100%;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.7s ease;
         }
         
-        .book-cover img:hover {
-            transform: scale(1.03);
+        .book-cover-container:hover .book-cover {
+            transform: scale(1.05);
         }
         
+        /* Sections */
         section {
-            padding: 40px 0;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 30, 44, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: -1;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.5rem;
-            color: #1a2a6c;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
             position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
-        .section-title:after {
+        .section-title::before {
             content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, #1a2a6c, #fdbb2d);
-            margin: 10px auto;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
         }
         
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Rules Section */
         .rules {
             display: flex;
-            flex-direction: column;
-            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
             margin-bottom: 40px;
         }
         
         .rule {
-            background-color: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
             text-align: center;
-            transition: transform 0.3s ease;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .rule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
         }
         
         .rule:hover {
-            transform: translateY(-5px);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.08);
         }
         
         .rule-number {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-            color: white;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            color: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 25px;
             font-weight: bold;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
         
         .rule-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: #1a2a6c;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            font-weight: 600;
         }
         
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+        .rule p {
+            color: #e0e0ff;
+            font-size: 1.1rem;
+        }
+        
+        /* Testimonials Slider */
+        .testimonials-section {
+            position: relative;
+        }
+        
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            padding: 10px 0;
         }
         
         .testimonial {
-            border-radius: 10px;
+            flex: 0 0 300px;
+            margin: 0 15px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.05);
         }
         
         .testimonial:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
         
         .testimonial img {
             width: 100%;
-            height: 200px;
+            height: 400px;
             object-fit: cover;
             display: block;
         }
         
-        .cta-section {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-            border-radius: 20px;
-            margin: 40px 0;
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 15px;
         }
         
-        .cta-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        .slider-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .cta-button:hover {
-            background-color: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        .slider-dot.active {
+            background-color: var(--accent);
+            transform: scale(1.2);
         }
         
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
             width: 60px;
             height: 60px;
-            background-color: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 1.5rem;
+            color: var(--light);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .slider-arrow:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-arrow.prev {
+            left: 20px;
+        }
+        
+        .slider-arrow.next {
+            right: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.05);
+            text-align: center;
+            padding: 100px 20px;
+            border-radius: 25px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        .cta-text {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #e0e0ff;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: var(--light);
+            padding: 20px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             z-index: 1000;
             animation: pulse 2s infinite;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            text-decoration: none;
         }
         
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
+            transform: scale(1.15);
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            animation: none;
         }
         
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
+        .whatsapp-float i {
+            font-size: 38px;
+            color: white;
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 90px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(30, 30, 44, 0.9);
+            color: var(--light);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 85px;
         }
         
         @keyframes pulse {
@@ -225,82 +525,114 @@
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
         
+        /* Footer */
         footer {
-            background-color: #1a2a6c;
-            color: white;
+            background: rgba(20, 20, 35, 0.9);
+            color: var(--light);
             text-align: center;
-            padding: 30px 0;
+            padding: 60px 0;
             margin-top: 40px;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer-text {
             opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            margin-bottom: 10px;
         }
         
-        @media (min-width: 768px) {
-            .container {
-                max-width: 750px;
-            }
-            
+        /* Responsive */
+        @media (max-width: 768px) {
             .book-title {
                 font-size: 2.2rem;
             }
             
-            .rules {
-                flex-direction: row;
+            .section-title {
+                font-size: 2rem;
             }
             
-            .testimonials {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .slider-arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .slider-arrow.prev {
+                left: 10px;
+            }
+            
+            .slider-arrow.next {
+                right: 10px;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-button {
+                padding: 18px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .testimonial {
+                flex: 0 0 260px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Background Stars -->
+    <div class="stars" id="stars"></div>
+    
     <!-- Header Section -->
     <header>
         <div class="container">
-            <h1 class="book-title">O MELHOR PROFISSIONAL DO MUNDO</h1>
-            <p class="author">por Antonio Carlos</p>
-            <div class="slogan">"As 3 Regras do Bom Profissional"</div>
-            
-            <div class="book-cover">
-                <img src="https://i.postimg.cc/LXRZ9FMS/IMG-20250912-WA0000-LE-upscale-ultra-x4-size-of-changes-10-intensity-10.jpg" alt="Capa do livro O MELHOR PROFISSIONAL DO MUNDO">
+            <div class="header-content">
+                <h1 class="book-title">O MELHOR PROFISSIONAL DO MUNDO</h1>
+                <p class="author">por Antonio Carlos</p>
+                <div class="slogan">"As 3 Regras do Bom Profissional"</div>
+                
+                <div class="book-cover-container">
+                    <img src="https://i.postimg.cc/LXRZ9FMS/IMG-20250912-WA0000-LE-upscale-ultra-x4-size-of-changes-10-intensity-10.jpg" alt="Capa do livro O MELHOR PROFISSIONAL DO MUNDO" class="book-cover">
+                </div>
             </div>
         </div>
     </header>
     
     <!-- About Section -->
     <section class="about">
+        <div class="section-bg"></div>
         <div class="container">
-            <h2 class="section-title">Sobre o Livro</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Descubra os segredos para se tornar um profissional excepcional em qualquer área. Antonio Carlos compartilha as três regras fundamentais que separam os profissionais medíocres dos verdadeiramente extraordinários.</p>
+            <h2 class="section-title">Transforme Sua Carreira</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.3rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #e0e0ff;">
+                Descubra os segredos para se tornar um profissional excepcional em qualquer área. Antonio Carlos compartilha as três regras fundamentais que separam os profissionais medíocres dos verdadeiramente extraordinários.
+            </p>
             
             <div class="rules">
                 <div class="rule">
                     <div class="rule-number">1</div>
-                    <h3 class="rule-title">Comprometimento</h3>
-                    <p>A verdadeira excelência começa com um compromisso inabalável com seus objetivos e valores.</p>
+                    <h3 class="rule-title">Comprometimento Total</h3>
+                    <p>A verdadeira excelência começa com um compromisso inabalável com seus objetivos e valores. Sem dedicação completa, não há transformação real.</p>
                 </div>
                 
                 <div class="rule">
                     <div class="rule-number">2</div>
-                    <h3 class="rule-title">Disciplina</h3>
-                    <p>A consistência nas ações diárias é o que constrói o caminho para o sucesso duradouro.</p>
+                    <h3 class="rule-title">Disciplina Consistente</h3>
+                    <p>A consistência nas ações diárias é o que constrói o caminho para o sucesso duradouro. Grandes resultados vêm de pequenas ações repetidas.</p>
                 </div>
                 
                 <div class="rule">
                     <div class="rule-number">3</div>
-                    <h3 class="rule-title">Adaptabilidade</h3>
-                    <p>Saber evoluir com as mudanças do mercado é essencial para se manter relevante.</p>
+                    <h3 class="rule-title">Adaptabilidade Inteligente</h3>
+                    <p>Saber evoluir com as mudanças do mercado é essencial para se manter relevante. A adaptação é a chave para a longevidade profissional.</p>
                 </div>
             </div>
         </div>
@@ -308,40 +640,60 @@
     
     <!-- Testimonials Section -->
     <section class="testimonials-section">
+        <div class="section-bg"></div>
         <div class="container">
-            <h2 class="section-title">Quem já adquiriu o livro</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Veja alguns dos leitores que já transformaram suas carreiras com as lições deste livro:</p>
+            <h2 class="section-title">Quem Já Transformou Sua Carreira</h2>
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: #e0e0ff;">
+                Veja alguns dos profissionais que já aplicaram as lições deste livro e alcançaram resultados extraordinários:
+            </p>
             
-            <div class="testimonials">
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/G3XsCfgr/IMG-20251017-WA0009.jpg" alt="Testemunho 1">
+            <div class="slider-container">
+                <div class="slider-arrow prev">
+                    <i class="fas fa-chevron-left"></i>
                 </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/kXDRXyLK/IMG-20251017-WA0002.jpg" alt="Testemunho 2">
+                
+                <div class="slider">
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/G3XsCfgr/IMG-20251017-WA0009.jpg" alt="Testemunho 1">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/kXDRXyLK/IMG-20251017-WA0002.jpg" alt="Testemunho 2">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/rp2Dj2s0/IMG-20251017-WA0007.jpg" alt="Testemunho 3">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/k5NBhYR0/IMG-20251017-WA0005.jpg" alt="Testemunho 4">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/9MJzc4pq/IMG-20251017-WA0008.jpg" alt="Testemunho 5">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/1XdtNLbz/IMG-20251017-WA0003.jpg" alt="Testemunho 6">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/fT6yWQxq/IMG-20251017-WA0010.jpg" alt="Testemunho 7">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/KY585KdY/IMG-20251017-WA0004.jpg" alt="Testemunho 8">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/mkPZRmhP/IMG-20251017-WA0006.jpg" alt="Testemunho 9">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/tRcCDGms/IMG-20251017-WA0001.jpg" alt="Testemunho 10">
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/rp2Dj2s0/IMG-20251017-WA0007.jpg" alt="Testemunho 3">
+                
+                <div class="slider-arrow next">
+                    <i class="fas fa-chevron-right"></i>
                 </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/k5NBhYR0/IMG-20251017-WA0005.jpg" alt="Testemunho 4">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/9MJzc4pq/IMG-20251017-WA0008.jpg" alt="Testemunho 5">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/1XdtNLbz/IMG-20251017-WA0003.jpg" alt="Testemunho 6">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/fT6yWQxq/IMG-20251017-WA0010.jpg" alt="Testemunho 7">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/KY585KdY/IMG-20251017-WA0004.jpg" alt="Testemunho 8">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/mkPZRmhP/IMG-20251017-WA0006.jpg" alt="Testemunho 9">
-                </div>
-                <div class="testimonial">
-                    <img src="https://i.postimg.cc/tRcCDGms/IMG-20251017-WA0001.jpg" alt="Testemunho 10">
+                
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
                 </div>
             </div>
         </div>
@@ -351,18 +703,19 @@
     <section class="cta">
         <div class="container">
             <div class="cta-section">
-                <h2 class="cta-title">Transforme sua carreira agora!</h2>
-                <p>Adquira o livro "O MELHOR PROFISSIONAL DO MUNDO" e descubra como aplicar as 3 regras fundamentais para alcançar o sucesso profissional.</p>
-                <a href="https://wa.me/258878369400?text=Olá! Gostaria de adquirir o livro 'O MELHOR PROFISSIONAL DO MUNDO'" class="cta-button">Comprar pelo WhatsApp</a>
+                <h2 class="cta-title">Não Espere Pelo Momento Perfeito</h2>
+                <p class="cta-text">Adquira agora o livro "O MELHOR PROFISSIONAL DO MUNDO" e descubra como aplicar as 3 regras fundamentais para alcançar o sucesso profissional que você merece.</p>
+                <a href="https://wa.me/258878369400?text=Olá! Gostaria de adquirir o livro 'O MELHOR PROFISSIONAL DO MUNDO'" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> Comprar Agora
+                </a>
             </div>
         </div>
     </section>
     
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/258878369400?text=Olá! Gostaria de mais informações sobre o livro 'O MELHOR PROFISSIONAL DO MUNDO'" class="whatsapp-float" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-        </svg>
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-tooltip">Fale conosco no WhatsApp</div>
     </a>
     
     <!-- Footer -->
@@ -372,5 +725,126 @@
             <p class="footer-text">Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <script>
+        // Create stars for background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starsCount = 150;
+            
+            for (let i = 0; i < starsCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                
+                // Random size
+                const size = Math.random() * 3;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                
+                star.style.left = `${left}%`;
+                star.style.top = `${top}%`;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.animationDelay = `${delay}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.testimonial');
+            const prevBtn = document.querySelector('.slider-arrow.prev');
+            const nextBtn = document.querySelector('.slider-arrow.next');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            let currentSlide = 0;
+            const slideWidth = 300 + 30; // width + margin
+            const slidesPerView = Math.min(3, Math.floor(window.innerWidth / slideWidth));
+            
+            // Initialize slider position
+            updateSlider();
+            
+            // Next button click
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < slides.length - slidesPerView) {
+                    currentSlide++;
+                    updateSlider();
+                }
+            });
+            
+            // Previous button click
+            prevBtn.addEventListener('click', function() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlider();
+                }
+            });
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    currentSlide = index * Math.ceil(slides.length / dots.length);
+                    updateSlider();
+                });
+            });
+            
+            // Update slider position and active dot
+            function updateSlider() {
+                const translateX = -currentSlide * slideWidth;
+                slider.style.transform = `translateX(${translateX}px)`;
+                
+                // Update active dot
+                const activeDotIndex = Math.floor(currentSlide / Math.ceil(slides.length / dots.length));
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeDotIndex);
+                });
+                
+                // Update button states
+                prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentSlide >= slides.length - slidesPerView ? '0.5' : '1';
+            }
+            
+            // Auto slide
+            let autoSlideInterval = setInterval(() => {
+                if (currentSlide < slides.length - slidesPerView) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                updateSlider();
+            }, 5000);
+            
+            // Pause auto slide on hover
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            sliderContainer.addEventListener('mouseleave', () => {
+                autoSlideInterval = setInterval(() => {
+                    if (currentSlide < slides.length - slidesPerView) {
+                        currentSlide++;
+                    } else {
+                        currentSlide = 0;
+                    }
+                    updateSlider();
+                }, 5000);
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                updateSlider();
+            });
+        });
+    </script>
 </body>
 </html>
