@@ -1,1 +1,0 @@
-# O-Melhor-Profissional-do-Mundo
