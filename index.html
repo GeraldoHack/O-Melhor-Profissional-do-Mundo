@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O MELHOR PROFISSIONAL DO MUNDO | Antonio Carlos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a2a6c;
@@ -32,6 +33,7 @@
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
+            font-weight: 400;
         }
         
         body::before {
@@ -97,8 +99,9 @@
             background-clip: text;
             color: transparent;
             text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
         
         .author {
@@ -106,6 +109,7 @@
             margin-bottom: 20px;
             opacity: 0.9;
             color: #e0e0ff;
+            font-weight: 500;
         }
         
         .slogan {
@@ -189,6 +193,8 @@
             display: inline-block;
             left: 50%;
             transform: translateX(-50%);
+            font-weight: 700;
+            line-height: 1.3;
         }
         
         .section-title::before {
@@ -265,7 +271,7 @@
             align-items: center;
             justify-content: center;
             margin: 0 auto 25px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 1.8rem;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             border: 3px solid rgba(255, 255, 255, 0.2);
@@ -276,11 +282,14 @@
             margin-bottom: 20px;
             color: var(--accent);
             font-weight: 600;
+            line-height: 1.3;
         }
         
         .rule p {
             color: #e0e0ff;
             font-size: 1.1rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
         
         /* Testimonials Slider */
@@ -326,6 +335,11 @@
             height: 400px;
             object-fit: cover;
             display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .testimonial:hover img {
+            transform: scale(1.1);
         }
         
         .slider-nav {
@@ -417,7 +431,8 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-weight: 700;
+            font-weight: 800;
+            line-height: 1.2;
         }
         
         .cta-text {
@@ -426,6 +441,7 @@
             margin: 0 auto 40px;
             color: #e0e0ff;
             line-height: 1.8;
+            font-weight: 400;
         }
         
         .cta-button {
@@ -437,7 +453,7 @@
             padding: 20px 45px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1.3rem;
             margin-top: 20px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
@@ -464,6 +480,107 @@
         
         .cta-button:hover::before {
             left: 100%;
+        }
+        
+        /* Author Section */
+        .author-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 80px 0;
+            border-radius: 25px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .author-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.08;
+            z-index: -1;
+        }
+        
+        .author-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .author-image {
+            flex: 0 0 300px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .author-image::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: var(--gradient);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s ease;
+        }
+        
+        .author-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        
+        .author-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .author-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0ff;
+            font-weight: 400;
+        }
+        
+        .author-bio p {
+            margin-bottom: 20px;
         }
         
         /* WhatsApp Float */
@@ -512,6 +629,7 @@
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
         }
         
         .whatsapp-float:hover .whatsapp-tooltip {
@@ -547,6 +665,7 @@
             opacity: 0.8;
             font-size: 1rem;
             margin-bottom: 10px;
+            font-weight: 400;
         }
         
         /* Responsive */
@@ -585,6 +704,43 @@
             .testimonial {
                 flex: 0 0 260px;
             }
+            
+            .author-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .author-image {
+                flex: 0 0 auto;
+                width: 250px;
+                height: 250px;
+            }
+            
+            .author-name {
+                font-size: 1.8rem;
+            }
+            
+            .author-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Melhorias para qualidade das imagens */
+        .testimonial img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            filter: brightness(1.05) contrast(1.05);
+        }
+
+        .book-cover {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        .author-image img {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
     </style>
 </head>
@@ -612,7 +768,7 @@
         <div class="section-bg"></div>
         <div class="container">
             <h2 class="section-title">Transforme Sua Carreira</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.3rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #e0e0ff;">
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.3rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #e0e0ff; font-weight: 400; line-height: 1.8;">
                 Descubra os segredos para se tornar um profissional excepcional em qualquer área. Antonio Carlos compartilha as três regras fundamentais que separam os profissionais medíocres dos verdadeiramente extraordinários.
             </p>
             
@@ -643,7 +799,7 @@
         <div class="section-bg"></div>
         <div class="container">
             <h2 class="section-title">Quem Já Transformou Sua Carreira</h2>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: #e0e0ff;">
+            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: #e0e0ff; font-weight: 400;">
                 Veja alguns dos profissionais que já aplicaram as lições deste livro e alcançaram resultados extraordinários:
             </p>
             
@@ -683,6 +839,46 @@
                     <div class="testimonial">
                         <img src="https://i.postimg.cc/tRcCDGms/IMG-20251017-WA0001.jpg" alt="Testemunho 10">
                     </div>
+                    <!-- Novas imagens adicionadas -->
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/2VcxxLNC/IMG-20251108-WA0044.jpg" alt="Testemunho 11">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/ppGBB5Mv/IMG-20251108-WA0045.jpg" alt="Testemunho 12">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/mtXSS1Wr/IMG-20251108-WA0046.jpg" alt="Testemunho 13">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/PPr4Zz9t/IMG-20251108-WA0047.jpg" alt="Testemunho 14">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/4mL11HRR/IMG-20251108-WA0048.jpg" alt="Testemunho 15">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/fJTKXjF1/IMG-20251108-WA0049.jpg" alt="Testemunho 16">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/nCR119fJ/IMG-20251108-WA0050.jpg" alt="Testemunho 17">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/rKn99R2X/IMG-20251108-WA0051.jpg" alt="Testemunho 18">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/ppXZ8Y4t/IMG-20251108-WA0052.jpg" alt="Testemunho 19">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/ykYP9X5w/IMG-20251108-WA0053.jpg" alt="Testemunho 20">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/Yhq3gfVs/IMG-20251108-WA0054.jpg" alt="Testemunho 21">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/nCck7Y52/IMG-20251108-WA0055.jpg" alt="Testemunho 22">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.postimg.cc/vcHz9Ljk/IMG-20251108-WA0057.jpg" alt="Testemunho 23">
+                    </div>
                 </div>
                 
                 <div class="slider-arrow next">
@@ -694,6 +890,30 @@
                     <div class="slider-dot"></div>
                     <div class="slider-dot"></div>
                     <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author">
+        <div class="container">
+            <div class="author-section">
+                <div class="author-content">
+                    <div class="author-image">
+                        <img src="https://i.postimg.cc/0NnTLVPM/IMG-20251108-WA0060.jpg" alt="Antonio Carlos Amado">
+                    </div>
+                    <div class="author-info">
+                        <h2 class="author-name">Antonio Carlos Amado</h2>
+                        <p class="author-title">Médico, Palestrante, Autor, Consultor Pessoal, Empresário, Filantropo e Investidor</p>
+                        <div class="author-bio">
+                            <p>Com o propósito de levar alegria às pessoas, com a cura e superação dos obstáculos da vida.</p>
+                            <p>Licenciado em Medicina pela Faculdade de Medicina da Universidade Eduardo Mondlane (UEM) e Especialista em Cirurgia Geral, no Hospital Central de Maputo.</p>
+                            <p>Fez parte e tornou-se amigo de organizações sem fins lucrativos como a Rotary Internacional, através do Rotary Club de Maputo, a CCC (Campus Crusade for Christ). Participou de vários cursos e formações de desenvolvimento pessoal, internacionais e nacionais, dentre eles a Fórmula Milionária, ministrado pelo coach e mentor Arcélio Tivane.</p>
+                            <p>Vem investigando comportamento e os passos seguidos para o sucesso em Medicina, através da Média e observação de médicos de renome a nível nacional em Moçambique como Dr. Aurélio Zilhão, Dr. Domingos Mapasse e muitos outros.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
