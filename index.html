@@ -323,6 +323,7 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             transition: all 0.4s ease;
             background: rgba(255, 255, 255, 0.05);
+            position: relative;
         }
         
         .testimonial:hover {
@@ -336,10 +337,23 @@
             object-fit: cover;
             display: block;
             transition: transform 0.4s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            filter: brightness(1.02) contrast(1.02);
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
         }
         
         .testimonial:hover img {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+        
+        .image-loading {
+            background: linear-gradient(45deg, #2d1b69, #1a1a3e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
         }
         
         .slider-nav {
@@ -543,6 +557,8 @@
             object-fit: cover;
             display: block;
             transition: transform 0.7s ease;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
         }
         
         .author-image:hover img {
@@ -726,21 +742,12 @@
             }
         }
 
-        /* Melhorias para qualidade das imagens */
-        .testimonial img {
+        /* Otimizações de qualidade de imagem */
+        .high-quality {
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
-            filter: brightness(1.05) contrast(1.05);
-        }
-
-        .book-cover {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
-        .author-image img {
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            image-rendering: high-quality;
+            -ms-interpolation-mode: bicubic;
         }
     </style>
 </head>
@@ -757,7 +764,7 @@
                 <div class="slogan">"As 3 Regras do Bom Profissional"</div>
                 
                 <div class="book-cover-container">
-                    <img src="https://i.postimg.cc/LXRZ9FMS/IMG-20250912-WA0000-LE-upscale-ultra-x4-size-of-changes-10-intensity-10.jpg" alt="Capa do livro O MELHOR PROFISSIONAL DO MUNDO" class="book-cover">
+                    <img src="https://i.postimg.cc/LXRZ9FMS/IMG-20250912-WA0000-LE-upscale-ultra-x4-size-of-changes-10-intensity-10.jpg" alt="Capa do livro O MELHOR PROFISSIONAL DO MUNDO" class="book-cover high-quality">
                 </div>
             </div>
         </div>
@@ -809,75 +816,77 @@
                 </div>
                 
                 <div class="slider">
+                    <!-- Imagens originais -->
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/G3XsCfgr/IMG-20251017-WA0009.jpg" alt="Testemunho 1">
+                        <img src="https://i.postimg.cc/G3XsCfgr/IMG-20251017-WA0009.jpg" alt="Testemunho 1" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/kXDRXyLK/IMG-20251017-WA0002.jpg" alt="Testemunho 2">
+                        <img src="https://i.postimg.cc/kXDRXyLK/IMG-20251017-WA0002.jpg" alt="Testemunho 2" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/rp2Dj2s0/IMG-20251017-WA0007.jpg" alt="Testemunho 3">
+                        <img src="https://i.postimg.cc/rp2Dj2s0/IMG-20251017-WA0007.jpg" alt="Testemunho 3" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/k5NBhYR0/IMG-20251017-WA0005.jpg" alt="Testemunho 4">
+                        <img src="https://i.postimg.cc/k5NBhYR0/IMG-20251017-WA0005.jpg" alt="Testemunho 4" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/9MJzc4pq/IMG-20251017-WA0008.jpg" alt="Testemunho 5">
+                        <img src="https://i.postimg.cc/9MJzc4pq/IMG-20251017-WA0008.jpg" alt="Testemunho 5" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/1XdtNLbz/IMG-20251017-WA0003.jpg" alt="Testemunho 6">
+                        <img src="https://i.postimg.cc/1XdtNLbz/IMG-20251017-WA0003.jpg" alt="Testemunho 6" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/fT6yWQxq/IMG-20251017-WA0010.jpg" alt="Testemunho 7">
+                        <img src="https://i.postimg.cc/fT6yWQxq/IMG-20251017-WA0010.jpg" alt="Testemunho 7" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/KY585KdY/IMG-20251017-WA0004.jpg" alt="Testemunho 8">
+                        <img src="https://i.postimg.cc/KY585KdY/IMG-20251017-WA0004.jpg" alt="Testemunho 8" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/mkPZRmhP/IMG-20251017-WA0006.jpg" alt="Testemunho 9">
+                        <img src="https://i.postimg.cc/mkPZRmhP/IMG-20251017-WA0006.jpg" alt="Testemunho 9" class="high-quality" loading="eager">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/tRcCDGms/IMG-20251017-WA0001.jpg" alt="Testemunho 10">
+                        <img src="https://i.postimg.cc/tRcCDGms/IMG-20251017-WA0001.jpg" alt="Testemunho 10" class="high-quality" loading="eager">
                     </div>
-                    <!-- Novas imagens adicionadas -->
+                    
+                    <!-- Novas imagens com links otimizados para qualidade -->
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/2VcxxLNC/IMG-20251108-WA0044.jpg" alt="Testemunho 11">
-                    </div>
-                    <div class="testimonial">
-                        <img src="https://i.postimg.cc/ppGBB5Mv/IMG-20251108-WA0045.jpg" alt="Testemunho 12">
+                        <img src="https://i.ibb.co/fVFgPyMy/IMG-20251108-WA0044.jpg" alt="Testemunho 11" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/mtXSS1Wr/IMG-20251108-WA0046.jpg" alt="Testemunho 13">
+                        <img src="https://i.ibb.co/xtwzvCd1/IMG-20251108-WA0045.jpg" alt="Testemunho 12" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/PPr4Zz9t/IMG-20251108-WA0047.jpg" alt="Testemunho 14">
+                        <img src="https://i.ibb.co/WNXjhp22/IMG-20251108-WA0046.jpg" alt="Testemunho 13" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/4mL11HRR/IMG-20251108-WA0048.jpg" alt="Testemunho 15">
+                        <img src="https://i.ibb.co/Kjqt9KhQ/IMG-20251108-WA0047.jpg" alt="Testemunho 14" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/fJTKXjF1/IMG-20251108-WA0049.jpg" alt="Testemunho 16">
+                        <img src="https://i.ibb.co/YFD2GcNK/IMG-20251108-WA0048.jpg" alt="Testemunho 15" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/nCR119fJ/IMG-20251108-WA0050.jpg" alt="Testemunho 17">
+                        <img src="https://i.ibb.co/TBXBXfxm/IMG-20251108-WA0049.jpg" alt="Testemunho 16" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/rKn99R2X/IMG-20251108-WA0051.jpg" alt="Testemunho 18">
+                        <img src="https://i.ibb.co/8LH1FbZ8/IMG-20251108-WA0050.jpg" alt="Testemunho 17" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/ppXZ8Y4t/IMG-20251108-WA0052.jpg" alt="Testemunho 19">
+                        <img src="https://i.ibb.co/xt3Jrr4N/IMG-20251108-WA0051.jpg" alt="Testemunho 18" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/ykYP9X5w/IMG-20251108-WA0053.jpg" alt="Testemunho 20">
+                        <img src="https://i.ibb.co/23RH40hs/IMG-20251108-WA0056.jpg" alt="Testemunho 19" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/Yhq3gfVs/IMG-20251108-WA0054.jpg" alt="Testemunho 21">
+                        <img src="https://i.ibb.co/23n7MWzn/IMG-20251108-WA0053.jpg" alt="Testemunho 20" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/nCck7Y52/IMG-20251108-WA0055.jpg" alt="Testemunho 22">
+                        <img src="https://i.ibb.co/C3qGbKKh/IMG-20251108-WA0054.jpg" alt="Testemunho 21" class="high-quality" loading="lazy">
                     </div>
                     <div class="testimonial">
-                        <img src="https://i.postimg.cc/vcHz9Ljk/IMG-20251108-WA0057.jpg" alt="Testemunho 23">
+                        <img src="https://i.ibb.co/4ZzcCf5y/IMG-20251108-WA0055.jpg" alt="Testemunho 22" class="high-quality" loading="lazy">
+                    </div>
+                    <div class="testimonial">
+                        <img src="https://i.ibb.co/v4790sHn/IMG-20251108-WA0057.jpg" alt="Testemunho 23" class="high-quality" loading="lazy">
                     </div>
                 </div>
                 
@@ -902,7 +911,7 @@
             <div class="author-section">
                 <div class="author-content">
                     <div class="author-image">
-                        <img src="https://i.postimg.cc/0NnTLVPM/IMG-20251108-WA0060.jpg" alt="Antonio Carlos Amado">
+                        <img src="https://i.postimg.cc/0NnTLVPM/IMG-20251108-WA0060.jpg" alt="Antonio Carlos Amado" class="high-quality">
                     </div>
                     <div class="author-info">
                         <h2 class="author-name">Antonio Carlos Amado</h2>
@@ -941,7 +950,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p class="footer-text">© 2023 O MELHOR PROFISSIONAL DO MUNDO | por Antonio Carlos</p>
+            <p class="footer-text">© 2025 O MELHOR PROFISSIONAL DO MUNDO | por Antonio Carlos</p>
             <p class="footer-text">Todos os direitos reservados</p>
         </div>
     </footer>
@@ -976,9 +985,20 @@
             }
         }
         
+        // Otimização de carregamento de imagens
+        function optimizeImageLoading() {
+            const images = document.querySelectorAll('img.high-quality');
+            images.forEach(img => {
+                // Forçar recarregamento para melhor qualidade
+                const originalSrc = img.src;
+                img.src = originalSrc + '?v=' + new Date().getTime();
+            });
+        }
+        
         // Slider functionality
         document.addEventListener('DOMContentLoaded', function() {
             createStars();
+            optimizeImageLoading();
             
             const slider = document.querySelector('.slider');
             const slides = document.querySelectorAll('.testimonial');
